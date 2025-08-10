@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import { useProfileStore } from "../stores/profile";
+
 console.log("ProfileSetup mounted at", new Date().toISOString());
 
 import { useState } from "react";
+
 
 const JOB_OPTIONS = [
   "프론트엔드","백엔드","풀스택","모바일(iOS)","모바일(Android)","웹 퍼블리셔",
@@ -12,6 +16,9 @@ const JOB_OPTIONS = [
 ];
 
 export default function ProfileSetup() {
+  const navigate = useNavigate();
+  const setProfile = useProfileStore((s) => s.setProfile);
+
   const [nickname, setNickname] = useState("");
   const [job, setJob] = useState("");
   const [customJobChecked, setCustomJobChecked] = useState(false);
@@ -27,11 +34,24 @@ export default function ProfileSetup() {
     setShowList(false); // 선택하면 접힘(스크롤 사라짐)
   };
 
-  const handleNext = (e) => {
-    e.preventDefault();
-    if (!canNext) return;
-    alert(`닉네임: ${nickname}\n직무: ${customJobChecked ? customJob : job}`);
+const handleNext = (e) => {
+  e.preventDefault();
+  if (!canNext) return;
+
+  const payload = {
+    nickname: nickname.trim(),
+    desiredRole: (customJobChecked ? customJob : job).trim(),
+    recentActivity: "",
   };
+
+  // 전역 상태 저장
+  setProfile(payload);
+
+  // Home 페이지로 이동
+  navigate("/home");
+};
+
+
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
