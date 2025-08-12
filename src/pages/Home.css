@@ -76,3 +76,71 @@
   font-size: 13px;
   color: #6b7280;
 }
+
+.cm-hero {
+  margin: 16px 0 24px;
+}
+
+.cm-hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cm-brand {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0f172a; /* slate-900 */
+}
+
+.cm-gear {
+  font-size: 22px;
+  line-height: 1;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0; /* slate-200 */
+  background: #fff;
+  cursor: pointer;
+}
+.cm-gear:hover { background:#f8fafc; }
+
+.cm-hello {
+  margin: 14px 0 16px;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  color: #0f172a;
+}
+
+.cm-profile-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 16px;
+  background: #eaf3ff;            /* 밝은 블루 카드 */
+  border: 1px solid #dbeafe;      /* 블루 라인 */
+}
+
+.cm-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  background: #dbeafe;            /* light blue */
+  color: #1e40af;
+}
+
+.cm-profile-meta { display: grid; gap: 6px; }
+
+.cm-row { display: flex; gap: 8px; align-items: baseline; }
+
+.cm-label {
+  color: #334155;                  /* slate-600 */
+  font-weight: 600;
+}
+
+.cm-value { color:#0f172a; }
