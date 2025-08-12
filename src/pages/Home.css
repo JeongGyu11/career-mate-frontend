@@ -1,39 +1,11 @@
-.home-container {
-  padding: 20px;
-  font-family: "Noto Sans KR", sans-serif;
+/* ===== 홈 레이아웃 ===== */
+.cm-home {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
 }
 
-.welcome-banner {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.quick-actions {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.quick-actions button {
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s;
-}
-
-.quick-actions button:hover {
-  background-color: #1e40af;
-}
-
+/* ===== 빠른 실행 그리드 ===== */
 .quick-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(140px, 1fr));
@@ -46,6 +18,7 @@
   .quick-grid { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
 }
 
+/* Link를 카드처럼 보이게 */
 .qa-card {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -58,89 +31,53 @@
   cursor: pointer;
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  text-decoration: none;
+  color: inherit;
 }
 .qa-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(37, 99, 235, .12);
   border-color: #dbeafe;
 }
-.qa-icon {
-  font-size: 22px;
-  line-height: 1;
-}
-.qa-title {
-  font-weight: 700;
-  font-size: 15px;
-}
-.qa-desc {
-  font-size: 13px;
-  color: #6b7280;
-}
-
-.cm-hero {
-  margin: 16px 0 24px;
-}
-
-.cm-hero__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cm-brand {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #0f172a; /* slate-900 */
-}
-
-.cm-gear {
-  font-size: 22px;
-  line-height: 1;
-  padding: 8px;
+.qa-card:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
   border-radius: 12px;
-  border: 1px solid #e2e8f0; /* slate-200 */
-  background: #fff;
-  cursor: pointer;
 }
-.cm-gear:hover { background:#f8fafc; }
+.qa-icon { font-size: 22px; line-height: 1; }
+.qa-title { font-weight: 700; font-size: 15px; }
+.qa-desc { font-size: 13px; color: #6b7280; }
 
+/* ===== 히어로 영역 ===== */
+.cm-hero { margin: 16px 0 24px; }
+.cm-hero__top {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cm-brand {
+  font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+  color: #0f172a;
+}
 .cm-hello {
   margin: 14px 0 16px;
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: -0.6px;
+  font-size: 34px; font-weight: 900; letter-spacing: -0.6px;
   color: #0f172a;
 }
 
+/* ===== 프로필 카드 ===== */
 .cm-profile-card {
-  display: flex;
-  gap: 16px;
-  align-items: center;
+  display: flex; gap: 16px; align-items: center;
   padding: 16px;
   border-radius: 16px;
-  background: #eaf3ff;            /* 밝은 블루 카드 */
-  border: 1px solid #dbeafe;      /* 블루 라인 */
+  background: #eaf3ff;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, .04);
 }
-
 .cm-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  background: #dbeafe;            /* light blue */
-  color: #1e40af;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 28px;
+  background: #dbeafe; color: #1e40af;
 }
-
 .cm-profile-meta { display: grid; gap: 6px; }
-
 .cm-row { display: flex; gap: 8px; align-items: baseline; }
-
-.cm-label {
-  color: #334155;                  /* slate-600 */
-  font-weight: 600;
-}
-
+.cm-label { color: #334155; font-weight: 600; }
 .cm-value { color:#0f172a; }
